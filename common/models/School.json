@@ -1,5 +1,6 @@
 {
   "name": "School",
+  "plural": "schools",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -68,6 +69,16 @@
     "teachers": {
       "type": "hasMany",
       "model": "Teacher",
+      "foreignKey": "schoolId"
+    },
+    "points": {
+      "type": "hasMany",
+      "model": "Point",
+      "foreignKey": "schoolId"
+    },
+    "pointRelations": {
+      "type": "hasMany",
+      "model": "PointRelation",
       "foreignKey": "schoolId"
     },
     "students": {

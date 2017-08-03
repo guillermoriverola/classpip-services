@@ -1,6 +1,6 @@
 {
-  "name": "Group",
-  "plural": "groups",
+  "name": "Point",
+  "plural": "points",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -10,19 +10,27 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "image": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],
   "relations": {
+    "school": {
+      "type": "belongsTo",
+      "model": "School",
+      "foreignKey": "schoolId"
+    },
     "teacher": {
       "type": "belongsTo",
       "model": "Teacher",
       "foreignKey": "teacherId"
-    },
-    "pointRelations": {
-      "type": "hasMany",
-      "model": "PointRelation",
-      "foreignKey": "groupId"
     },
     "students": {
       "type": "hasAndBelongsToMany",
@@ -39,13 +47,13 @@
     {
       "accessType": "READ",
       "principalType": "ROLE",
-      "principalId": "$authenticated",
+      "principalId": "$everyone",
       "permission": "ALLOW"
     },
     {
       "accessType": "WRITE",
       "principalType": "ROLE",
-      "principalId": "$owner",
+      "principalId": "$everyone",
       "permission": "ALLOW"
     }
   ],

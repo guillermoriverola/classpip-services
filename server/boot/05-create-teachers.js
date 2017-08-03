@@ -47,11 +47,21 @@ module.exports = function (app, cb) {
     username: 'teacher-5',
     password: 'teacher-5',
     name: 'Lorena',
-    surname: 'Saez',
+    surname: 'Riverola',
     email: 'teacher-5@classpip.com',
     emailVerified: 1,
     schoolId: 2,
     avatarId: 2
+  }, {
+    id: 1005,
+    username: 'teacher-6',
+    password: 'teacher-6',
+    name: 'Guillermo',
+    surname: 'Riverola',
+    email: 'teacher-6@classpip.com',
+    emailVerified: 1,
+    schoolId: 2,
+    avatarId: 1
   }], function (err) {
     if (err) throw err;
     process.nextTick(cb);

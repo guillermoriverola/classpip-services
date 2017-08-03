@@ -62,6 +62,14 @@
     "dataSource": "db",
     "public": true
   },
+  "Point": {
+    "dataSource": "db",
+    "public": true
+  },
+  "PointRelation": {
+    "dataSource": "db",
+    "public": true
+  },
   "Badge": {
     "dataSource": "db",
     "public": true

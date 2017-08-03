@@ -29,6 +29,11 @@
       "model": "Group",
       "foreignKey": "teacherId"
     },
+    "points": {
+      "type": "hasMany",
+      "model": "Point",
+      "foreignKey": "teacherId"
+    },
     "avatar": {
       "type": "belongsTo",
       "model": "Avatar",
