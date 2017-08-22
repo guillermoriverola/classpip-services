@@ -85,118 +85,90 @@ module.exports = function (app, cb) {
   }  ], function (err, students) {
     if (err) throw err;
 
-    app.models.Badge.create([{
-      id: 1,
-      name: 'badge 1',
-      image: 'https://cdn2.iconfinder.com/data/icons/web2/Icons/Favorite_128x128.png',
-      points: 10
-    }, {
-      id: 2,
-      name: 'badge 2',
-      image: 'https://cdn2.iconfinder.com/data/icons/web2/Icons/Misterwong_128x128.png',
-      points: 20
-    }], function (err, badges) {
-      if (err) throw err;
+	  app.models.Group.create([{
+		id: 1,
+		name: 'Group 1',
+		teacherId: 1000,
+		gradeId: 1,
+		matterId: 1
+	  }, {
+		id: 2,
+		name: 'Group 2',
+		teacherId: 1000,
+		gradeId: 1,
+		matterId: 2
+	  }, {
+		id: 3,
+		name: 'Group 3',
+		teacherId: 1000,
+		gradeId: 2,
+		matterId: 1
+	  }, {
+		id: 4,
+		name: 'Group 4',
+		teacherId: 1001,
+		gradeId: 1,
+		matterId: 2
+	  }], function (err, groups) {
 
-      // Assign badges to students
-      students[0].badges.add(badges[0], function (err) {
-        if (err) throw err;
-        students[0].badges.add(badges[1], function (err) {
-          if (err) throw err;
-          students[1].badges.add(badges[0], function (err) {
-            if (err) throw err;
-            students[2].badges.add(badges[1], function (err) {
-              if (err) throw err;
-
-              app.models.Group.create([{
-                id: 1,
-                name: 'Group 1',
-                teacherId: 1000,
-                gradeId: 1,
-                matterId: 1
-              }, {
-                id: 2,
-                name: 'Group 2',
-                teacherId: 1000,
-                gradeId: 1,
-                matterId: 2
-              }, {
-                id: 3,
-                name: 'Group 3',
-                teacherId: 1000,
-                gradeId: 2,
-                matterId: 1
-              }, {
-                id: 4,
-                name: 'Group 4',
-                teacherId: 1001,
-                gradeId: 1,
-                matterId: 2
-              }], function (err, groups) {
-
-                groups[0].students.add(students[0], function (err) {
-                  if (err) throw err;
-                  groups[0].students.add(students[1], function (err) {
-                    if (err) throw err;
-                    groups[0].students.add(students[2], function (err) {
-                      if (err) throw err;
-                      groups[0].students.add(students[3], function (err) {
-                        if (err) throw err;
-                        groups[0].students.add(students[4], function (err) {
-                          if (err) throw err;
-                          groups[0].students.add(students[5], function (err) {
-                            if (err) throw err;
-                            groups[0].students.add(students[6], function (err) {
-                              if (err) throw err;
-                              groups[0].students.add(students[7], function (err) {
-                                if (err) throw err;
-                                groups[0].students.add(students[8], function (err) {
-                                  if (err) throw err;
-                                  groups[1].students.add(students[2], function (err) {
-                                    if (err) throw err;
-                                    groups[1].students.add(students[3], function (err) {
-                                      if (err) throw err;
-                                      groups[1].students.add(students[4], function (err) {
-                                        if (err) throw err;
-                                        groups[2].students.add(students[5], function (err) {
-                                          if (err) throw err;
-                                          groups[1].students.add(students[6], function (err) {
-                                            if (err) throw err;
-                                            groups[2].students.add(students[3], function (err) {
-                                              if (err) throw err;
-											  groups[2].students.add(students[6], function (err) {
-                                                if (err) throw err;
-												groups[3].students.add(students[1], function (err) {
-												  if (err) throw err;
-												  groups[3].students.add(students[2], function (err) {
-													if (err) throw err;
-													groups[3].students.add(students[3], function (err) {
-													  if (err) throw err;
-													  process.nextTick(cb);
-												    })
-												  })
-											    })
-											  })  
-                                            })
-                                          })
-                                        })
-                                      })
-                                    })
-                                  })
-                                })
-                              })
-                            })
-                          })
-                        })
-                      })
-                    })
-                  })
-                })
-              })
-            });
-          })
-        })
-      })
-    })
+		groups[0].students.add(students[0], function (err) {
+		  if (err) throw err;
+		  groups[0].students.add(students[1], function (err) {
+			if (err) throw err;
+			groups[0].students.add(students[2], function (err) {
+			  if (err) throw err;
+			  groups[0].students.add(students[3], function (err) {
+				if (err) throw err;
+				groups[0].students.add(students[4], function (err) {
+				  if (err) throw err;
+				  groups[0].students.add(students[5], function (err) {
+					if (err) throw err;
+					groups[0].students.add(students[6], function (err) {
+					  if (err) throw err;
+					  groups[0].students.add(students[7], function (err) {
+						if (err) throw err;
+						groups[1].students.add(students[7], function (err) {
+						  if (err) throw err;
+						  groups[1].students.add(students[0], function (err) {
+							if (err) throw err;
+							groups[1].students.add(students[5], function (err) {
+							  if (err) throw err;
+							  groups[1].students.add(students[4], function (err) {
+								if (err) throw err;
+								groups[2].students.add(students[0], function (err) {
+								  if (err) throw err;
+								  groups[1].students.add(students[7], function (err) {
+									if (err) throw err;
+									groups[2].students.add(students[3], function (err) {
+									  if (err) throw err;											  
+										groups[3].students.add(students[1], function (err) {
+										  if (err) throw err;
+										  groups[3].students.add(students[2], function (err) {
+											if (err) throw err;
+											groups[3].students.add(students[3], function (err) {
+											  if (err) throw err;
+											  groups[2].students.add(students[7], function (err) {
+												if (err) throw err;
+											  process.nextTick(cb);
+											  })
+											})
+										  })
+										})											    
+									})
+								  })
+								})
+							  })
+							})
+						  })
+						})
+					  })
+					})
+				  })
+				})
+			  })
+			})
+		  })
+		})
+	  })
   });
 };

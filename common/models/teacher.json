@@ -34,6 +34,11 @@
       "model": "Point",
       "foreignKey": "teacherId"
     },
+    "badges": {
+      "type": "hasMany",
+      "model": "Badge",
+      "foreignKey": "teacherId"
+    },
     "avatar": {
       "type": "belongsTo",
       "model": "Avatar",

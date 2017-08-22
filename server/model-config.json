@@ -73,5 +73,9 @@
   "Badge": {
     "dataSource": "db",
     "public": true
+  },
+  "BadgeRelation": {
+    "dataSource": "db",
+    "public": true
   }
 }

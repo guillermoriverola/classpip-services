@@ -24,6 +24,11 @@
       "model": "PointRelation",
       "foreignKey": "groupId"
     },
+    "badgeRelations": {
+      "type": "hasMany",
+      "model": "PointBadgeRelation",
+      "foreignKey": "groupId"
+    },
     "students": {
       "type": "hasAndBelongsToMany",
       "model": "Student",

@@ -76,10 +76,20 @@
       "model": "Point",
       "foreignKey": "schoolId"
     },
+    "badges": {
+      "type": "hasMany",
+      "model": "Badge",
+      "foreignKey": "schoolId"
+    },
     "pointRelations": {
       "type": "hasMany",
       "model": "PointRelation",
       "foreignKey": "schoolId"
+    },
+    "badgeRelations": {
+      "type": "hasMany",
+      "model": "BadgeRelation",
+      "foreignKey": "groupId"
     },
     "students": {
       "type": "hasMany",

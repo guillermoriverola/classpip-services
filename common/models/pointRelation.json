@@ -19,7 +19,7 @@
       "model": "Point",
       "foreignKey": "pointId"
     },
-	"groups": {
+	  "groups": {
       "type": "belongsTo",
       "model": "Group",
       "foreignKey": "groupId"

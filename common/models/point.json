@@ -32,6 +32,11 @@
       "model": "Teacher",
       "foreignKey": "teacherId"
     },
+    "pointRelations": {
+      "type": "hasMany",
+      "model": "PointRelation",
+      "foreignKey": "pointId"
+    },
     "students": {
       "type": "hasAndBelongsToMany",
       "model": "Student",
